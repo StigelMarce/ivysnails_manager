@@ -1,7 +1,83 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 [x-cloak] {
     display: none;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap")
+layer(base);
+
+@layer utilities {
+    /* Chrome, Safari, Edge, and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .custom-scrollbar {
+        &::-webkit-scrollbar {
+            @apply size-1.5;
+        }
+
+        &::-webkit-scrollbar-track {
+            @apply rounded-full;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            @apply bg-gray-200 rounded-full;
+        }
+    }
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: auto; /* necesario para que OverlayScrollbars funcione correctamente */
+  margin: 0;
+  padding: 0;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #344054;
+}
+
+.sidebar:hover {
+    width: 290px;
+}
+.sidebar:hover .logo {
+    display: block;
+}
+.sidebar:hover .logo-icon {
+    display: none;
+}
+.sidebar:hover .sidebar-header {
+    justify-content: space-between;
+}
+.sidebar:hover .menu-group-title {
+    display: block;
+}
+.sidebar:hover .menu-group-icon {
+    display: none;
+}
+
+.sidebar:hover .menu-item-text {
+    display: inline;
+}
+
+.sidebar:hover .menu-item-arrow {
+    display: block;
+}
+
+.sidebar:hover .menu-dropdown {
+    display: flex;
 }

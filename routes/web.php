@@ -15,3 +15,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/calendar', function () {
+        return view('common.calendar');
+    })->name('calendar');
