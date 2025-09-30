@@ -1,0 +1,262 @@
+<diagram program="umletino" version="15.1"><zoom_level>3</zoom_level><help_text>Space for diagram notes</help_text><element><id>Relation</id><coordinates><x>24</x><y>201</y><w>42</w><h>60</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=0..n</panel_attributes><additional_attributes>110;180;110;110;20;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>63</x><y>204</y><w>48</w><h>57</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=
+m2=0..n
+</panel_attributes><additional_attributes>10;170;10;100;120;100;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>228</x><y>264</y><w>75</w><h>15</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unUsuario
+m2=1
+r2=unaPersona</panel_attributes><additional_attributes>10;20;230;20</additional_attributes></element><element><id>Relation</id><coordinates><x>195</x><y>297</y><w>108</w><h>15</h></coordinates><panel_attributes>lt=-
+m1=0..n
+r1=listaPersonas
+m2=0..n
+r2= listaRecomendaciones</panel_attributes><additional_attributes>340;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>378</x><y>303</y><w>57</w><h>78</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unCaPersona
+m2=1
+r2= unaCuenta</panel_attributes><additional_attributes>10;20;90;20;90;230;170;230</additional_attributes></element><element><id>Relation</id><coordinates><x>339</x><y>219</y><w>84</w><h>45</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaPersona
+m2=0..n
+r2= listaMensajes</panel_attributes><additional_attributes>10;130;10;70;180;70;180;10</additional_attributes></element><element><id>Relation</id><coordinates><x>306</x><y>207</y><w>36</w><h>57</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaPersona
+m2=1
+r2= unaPreferencia</panel_attributes><additional_attributes>10;170;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>378</x><y>276</y><w>87</w><h>15</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaPersona
+m2=0..n
+r2= listaNotificaciones</panel_attributes><additional_attributes>10;20;270;20</additional_attributes></element><element><id>Relation</id><coordinates><x>213</x><y>210</y><w>63</w><h>48</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unUsuario
+m2=0..n
+r2= listaPermisos</panel_attributes><additional_attributes>10;140;10;80;110;80;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>186</x><y>210</y><w>27</w><h>48</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unUsuario
+m2=1
+r2= unRol</panel_attributes><additional_attributes>10;140;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>87</x><y>264</y><w>90</w><h>15</h></coordinates><panel_attributes>lt=-
+m1=1
+r1= unCentroDeEstetica
+m2=0..n
+r2=listaUsuarios</panel_attributes><additional_attributes>10;20;280;20</additional_attributes></element><element><id>Relation</id><coordinates><x>231</x><y>312</y><w>72</w><h>45</h></coordinates><panel_attributes>lt=-
+m1=1..n
+r1=listaServicios
+m2=1..n
+r2= listaPersonas
+</panel_attributes><additional_attributes>10;130;10;20;220;20</additional_attributes></element><element><id>Relation</id><coordinates><x>219</x><y>399</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=-
+m1=1..n
+r1=listaServicios
+m2=0..n
+r2= listaTurnos
+</panel_attributes><additional_attributes>10;10;10;70;280;70</additional_attributes></element><element><id>Relation</id><coordinates><x>339</x><y>333</y><w>30</w><h>63</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaPersona
+m2=0..n
+r2= listaTurnos</panel_attributes><additional_attributes>10;10;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>402</x><y>384</y><w>45</w><h>69</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaCuenta
+m2=0..n
+r2= listaTransaccion</panel_attributes><additional_attributes>90;20;40;20;40;210</additional_attributes></element><element><id>Relation</id><coordinates><x>354</x><y>459</y><w>45</w><h>39</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unTurno
+m2=0..n
+r2= listaTransaccion</panel_attributes><additional_attributes>10;10;10;100;130;100</additional_attributes></element><element><id>Relation</id><coordinates><x>438</x><y>459</y><w>75</w><h>15</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaTransaccion
+m2=0..n
+r2= listaPagos</panel_attributes><additional_attributes>10;20;230;20</additional_attributes></element><element><id>Relation</id><coordinates><x>438</x><y>474</y><w>78</w><h>42</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaTransaccion
+m2=1
+r2= unEstadoTransaccion</panel_attributes><additional_attributes>10;20;120;20;120;120</additional_attributes></element><element><id>Relation</id><coordinates><x>534</x><y>486</y><w>33</w><h>45</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaPago
+m2=1
+r2= unEstadoPago</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>561</x><y>459</y><w>75</w><h>30</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaPago
+m2=1
+r2= unTipoDePago</panel_attributes><additional_attributes>10;20;140;20;140;80</additional_attributes></element><element><id>Relation</id><coordinates><x>378</x><y>219</y><w>99</w><h>60</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaPersona
+m2=1
+r2= unaPreferencia</panel_attributes><additional_attributes>10;170;220;170;220;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>297</x><y>258</y><w>84</w><h>78</h></coordinates><panel_attributes>*Persona*
+--
+- persona_id: Int
+- nombre: String
+- apellido: String
+- dni: String
+- edad: int
+- sexo: char
+--
++ usuario(void): Usuario
++ notificaciones(void): List&lt;Notificacion&gt;
++ mensajes(void): List&lt;Mensaje&gt;
++ preferencia(void): Preferencia
++ recomendaciones(void): List&lt;Recomendacion&gt;
++ servicios(void): List&lt;Servicio&gt;
++ turnos(void): List&lt;Turno&gt;
++ cuenta(void): Cuenta
++ contacto(void): Contacto
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>171</x><y>252</y><w>60</w><h>39</h></coordinates><panel_attributes>*Usuario*
+--
+- user_id: Int
+- email: String
+- password: String
+--
++ persona(void): Persona
++ permisos(void): List&lt;Permiso&gt;
++ rol(void): Rol
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>429</x><y>357</y><w>63</w><h>45</h></coordinates><panel_attributes>*Cuenta*
+--
+- cuenta_id: Int
+- credito: float
+- saldo: float
+- fecha_actualizacion: Date
+--
++ cliente(void): Cliente
++ aplicar_credito(monto: float): void
++ actualizar_saldo(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>189</x><y>351</y><w>72</w><h>51</h></coordinates><panel_attributes>*Servicio*
+--
+- servicio_id: Int
+- nombre: String
+- duracion: int
+- precio: float
+- descuento: float
+- descripcion: String
+--
++ calcular_precio_final(): float
++ personas(void): List&lt;Persona&gt;
++ turnos(void): List&lt;Turno&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>303</x><y>390</y><w>72</w><h>72</h></coordinates><panel_attributes>*Turno*
+--
+- turno_id: Int
+- fecha: Date
+- hora_inicio: Time
+- hora_fin: Time
+- estado: String
+- tipo_turno: String
+--
++ reservar(): void
++ cancelar(): void
++ reprogramar(nueva_fecha: Date): void
++ servicios(void): List&lt;Servicio&gt;
++ profesional(void): Profesional
++ cliente(void): Cliente
++ transacciones(void): List&lt;Transaccion&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>228</x><y>186</y><w>45</w><h>27</h></coordinates><panel_attributes>*Permiso*
+--
+- permiso_id: Int
+- nombre: String
+--
++ usuario(void): Usuario
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>459</x><y>255</y><w>45</w><h>48</h></coordinates><panel_attributes>*Notificacion*
+--
+- notificacion_id: Int
+- fecha: Date
+- hora: Time
+- mensaje: String
+- tipo_notificacion: String
+- estado: String
+--
++ enviar(): void
++ persona(void): Persona
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>369</x><y>183</y><w>45</w><h>39</h></coordinates><panel_attributes>*Mensaje*
+--
+- fecha: Date
+- hora: Time
+- contenido: String
+- estado: String
+--
++ enviar(): void
++ persona(void): Persona
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>255</y><w>60</w><h>51</h></coordinates><panel_attributes>*Centro_de_estetica*
+--
+- centro_id: Int
+- nombre: String
+- cuit: String
+- direccion: String
+- contacto: String
+- ubicacion: String
+--
++ usuarios(void): List&lt;Usuario&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>138</x><y>297</y><w>60</w><h>30</h></coordinates><panel_attributes>*Recomendacion*
+--
+- recomendacion_id: Int
+- tema: String
+- mensaje: String
+--
++ personas(void): List&lt;Persona&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>393</x><y>447</y><w>48</w><h>51</h></coordinates><panel_attributes>*Transaccion*
+--
+- transaccion_id: Int
+- metodo: String
+- monto: float
+- tipo_transaccion: String
+- estado_transaccion: String
+--
++ registrar(): void
++ turno(void): Turno
++ cuenta(void): Cuenta
++ pagos(void): List&lt;Pago&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>507</x><y>432</y><w>57</w><h>57</h></coordinates><panel_attributes>*Pago*
+--
+- pago_id: Int
+- estado_pago: String
+- fecha_pago: Date
+- monto: float
+--
++ registrar_pago(): void
++ validar_pago(): boolean
++ transaccion(void): Transaccion
++ estado_pago(void):
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>585</x><y>483</y><w>39</w><h>30</h></coordinates><panel_attributes>*Tipo_de_pago*
+--
+- tipo_pago_id: Int
+- nombre: String
+- descripcion: String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>75</x><y>180</y><w>51</w><h>27</h></coordinates><panel_attributes>*Log*
+--
+- log_id: Int
+- accion: String
+- fecha: Date
+- usuario_responsable: String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>156</y><w>54</w><h>48</h></coordinates><panel_attributes>*Auditoria*
+--
+- auditoria_id: Int
+- accion: String
+- dato_nuevo: String
+- dato_viejo: String
+- fecha: Date
+- usuario_responsable: String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>276</x><y>183</y><w>60</w><h>27</h></coordinates><panel_attributes>*Preferencia*
+--
+- modo: String
+- notificaciones_activas: boolean
+--
++ persona(void): Persona
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>519</x><y>525</y><w>39</w><h>21</h></coordinates><panel_attributes>*Estado_pago*
+--
+- nombre: String
+- descripcion: String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>456</x><y>510</y><w>39</w><h>21</h></coordinates><panel_attributes>*Estado_transaccion*
+--
+- nombre: String
+- descripcion: String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>147</x><y>183</y><w>63</w><h>30</h></coordinates><panel_attributes>*Rol*
+--
+- rol_id: Int
+- nombre: String
+--
++ asignar_permiso(p: Permiso): void
++ usuario(void): Usuario
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>432</x><y>195</y><w>45</w><h>27</h></coordinates><panel_attributes>*Contacto*
+--
+- telefono: String
+- direccion: String
+--
++ persona(void): Persona
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>

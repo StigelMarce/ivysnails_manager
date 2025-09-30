@@ -1,0 +1,278 @@
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>679</x><y>203</y><w>196</w><h>161</h></coordinates><panel_attributes>*Persona*
+--
+- personaId: Int
+- nombre: String
+- apellido: String
+- dni: String
+- edad: int
+- sexo: char
+--
++ usuario(void): Usuario
++ notificaciones(void): List&lt;Notificacion&gt;
++ mensajes(void): List&lt;Mensaje&gt;
++ preferencia(void): Preferencia
++ profesional(void): Profesional
++ cliente(void): Cliente
++ recomendaciones(void): List&lt;Recomendacion&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>385</x><y>189</y><w>140</w><h>91</h></coordinates><panel_attributes>*Usuario*
+--
+- userId: Int
+- email: String
+- password: String
+--
++ persona(void): Persona
++ permisos(void): List&lt;Permiso&gt;
++ rol(void): Rol</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>476</x><y>427</y><w>147</w><h>112</h></coordinates><panel_attributes>*Profesional*
+--
+- profesionalId: Int
+- especialidad: String
+- disponibilidad: String
+--
++ asignarServicio(s: Servicio): void
++ persona(void): Persona
++ servicios(void): List&lt;Servicio&gt;
++ turnos(void): List&lt;Turno&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>679</x><y>441</y><w>147</w><h>112</h></coordinates><panel_attributes>*Cliente*
+--
+- clienteId: Int
+- telefono: String
+- direccion: String
+--
++ reservarTurno(t: Turno): void
++ cancelarTurno(t: Turno): void
++ consultarHistorial(): List&lt;Servicio&gt;
++ persona(void): Persona
++ turnos(void): List&lt;Turno&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>987</x><y>434</y><w>147</w><h>105</h></coordinates><panel_attributes>*Cuenta*
+--
+- cuentaId: Int
+- credito: float
+- saldo: float
+- fechaActualizacion: Date
+--
++ cliente(void): Cliente
++ aplicarCredito(monto: float): void
++ actualizarSaldo(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>336</x><y>581</y><w>168</w><h>119</h></coordinates><panel_attributes>*Servicio*
+--
+- servicioID: Int
+- nombre: String
+- duracion: int
+- precio: float
+- descuento: float
+- descripcion: String
+--
++ calcularPrecioFinal(): float
++ profesionales(void): List&lt;Profesional&gt;
++ turnos(void): List&lt;Turno&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>567</x><y>644</y><w>168</w><h>168</h></coordinates><panel_attributes>*Turno*
+--
+- turnoID: Int
+- fecha: Date
+- horaInicio: Time
+- horaFin: Time
+- estado: String
+- tipoTurno: String
+--
++ reservar(): void
++ cancelar(): void
++ reprogramar(nuevaFecha: Date): void
++ servicios(void): List&lt;Servicio&gt;
++ profesional(void): Profesional
++ cliente(void): Cliente
++ transacciones(void): List&lt;Transaccion&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>525</x><y>35</y><w>105</w><h>63</h></coordinates><panel_attributes>*Permiso*
+--
+- permisoID: Int
+- nombre: String
+-
++ usuario(void): Usuario
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1057</x><y>196</y><w>105</w><h>112</h></coordinates><panel_attributes>*Notificacion*
+--
+- notificacionId: Int
+- fecha: Date
+- hora: Time
+- mensaje: String
+- tipoNotificacion: String
+- estado: String
+--
++ enviar(): void
++ persona(void): Persona</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>854</x><y>28</y><w>105</w><h>91</h></coordinates><panel_attributes>*Mensaje*
+--
+- fecha: Date
+- hora: Time
+- contenido: String
+- estado: String
+-
++ enviar(): void
++ persona(void): Persona</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>49</x><y>189</y><w>140</w><h>119</h></coordinates><panel_attributes>*CentroDeEstetica*
+--
+- centroId: Int
+- nombre: String
+- cuit: String
+- direccion: String
+- contacto: String
+- ubicacion: String
+-
++ usuarios(void): List&lt;Usuario&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>308</x><y>294</y><w>140</w><h>70</h></coordinates><panel_attributes>*Recomendacion*
+--
+- recomendacionID: Int
+- tema: String
+- mensaje: String
+-
++ personas(void): List&lt;Persona&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>903</x><y>644</y><w>112</w><h>119</h></coordinates><panel_attributes>*Transaccion*
+--
+- transaccionID: Int
+- metodo: String
+- monto: float
+- tipoTransaccion: String
+- estadoTransaccion: String
+--
++ registrar(): void
++ turno(void): Turno
++ cuenta(void): Cuenta
++ pagos(void): List&lt;Pago&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1169</x><y>609</y><w>133</w><h>133</h></coordinates><panel_attributes>*Pago*
+--
+- pagoID: Int
+- estadoPago: String
+- fechaPago: Date
+- monto: float
+--
++ registrarPago(): void
++ validarPago(): boolean
++ transaccion(void): Transaccion
++ estadoPago(void):</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1351</x><y>826</y><w>91</w><h>70</h></coordinates><panel_attributes>*TipoDePago*
+--
+- tipoPagoID: Int
+- nombre: String
+- descripcion: String
+-
++ </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>154</x><y>49</y><w>119</w><h>63</h></coordinates><panel_attributes>*Log*
+--
+- logId: Int
+- accion: String
+- fecha: Date
+- usuarioResponsable: String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>0</y><w>126</w><h>112</h></coordinates><panel_attributes>*Auditoria*
+--
+- auditoriaId: Int
+- accion: String
+- datoNuevo: String
+- datoViejo: String
+- fecha: Date
+- usuarioResponsable: String
+-
++
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>637</x><y>28</y><w>140</w><h>63</h></coordinates><panel_attributes>*Preferencia*
+--
+- modo: String
+- notificacionesActivas: boolean
+-
++ persona(void): Persona
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1197</x><y>826</y><w>91</w><h>49</h></coordinates><panel_attributes>*EstadoPago*
+--
+- nombre: String
+- descripcion: String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1050</x><y>791</y><w>91</w><h>49</h></coordinates><panel_attributes>*EstadoTransaccion*
+--
+- nombre: String
+- descripcion: String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>336</x><y>28</y><w>147</w><h>70</h></coordinates><panel_attributes>*Rol*
+--
+- rolID: Int
+- nombre: String
+--
++ asignarPermiso(p: Permiso): void
++ usuario(void): Usuario
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>49</x><y>105</y><w>91</w><h>98</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=0..n</panel_attributes><additional_attributes>100;120;100;60;10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>133</x><y>105</y><w>112</w><h>98</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=
+m2=0..n
+</panel_attributes><additional_attributes>10;120;10;60;120;60;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>518</x><y>217</y><w>175</w><h>35</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unUsuario
+m2=1
+r2=unaPersona</panel_attributes><additional_attributes>10;20;230;20</additional_attributes></element><element><id>Relation</id><coordinates><x>539</x><y>322</y><w>154</w><h>119</h></coordinates><panel_attributes>lt=-
+m1=1
+r1= unProfesional
+m2=1
+r2=unaPersona</panel_attributes><additional_attributes>10;150;10;20;200;20</additional_attributes></element><element><id>Relation</id><coordinates><x>441</x><y>294</y><w>252</w><h>35</h></coordinates><panel_attributes>lt=-
+m1=0..n
+r1=listaPersonas
+m2=0..n
+r2= listaRecomendaciones</panel_attributes><additional_attributes>340;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>819</x><y>476</y><w>182</w><h>35</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unCliente
+m2=1
+r2= unaCuenta</panel_attributes><additional_attributes>10;20;240;20</additional_attributes></element><element><id>Relation</id><coordinates><x>777</x><y>112</y><w>196</w><h>105</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaPersona
+m2=0..n
+r2= listaMensajes</panel_attributes><additional_attributes>10;130;10;70;180;70;180;10</additional_attributes></element><element><id>Relation</id><coordinates><x>700</x><y>84</y><w>84</w><h>133</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaPersona
+m2=1
+r2= unaPreferencia</panel_attributes><additional_attributes>10;170;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>756</x><y>357</y><w>70</w><h>98</h></coordinates><panel_attributes>lt=-
+m1=1
+r1= unCliente
+m2=1
+r2=unaPersona</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>868</x><y>245</y><w>203</w><h>35</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaPersona
+m2=0..n
+r2= listaNotificaciones</panel_attributes><additional_attributes>10;20;270;20</additional_attributes></element><element><id>Relation</id><coordinates><x>483</x><y>91</y><w>147</w><h>112</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unUsuario
+m2=0..n
+r2= listaPermisos</panel_attributes><additional_attributes>10;140;10;80;110;80;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>91</y><w>63</w><h>112</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unUsuario
+m2=1
+r2= unRol</panel_attributes><additional_attributes>10;140;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>182</x><y>217</y><w>217</w><h>35</h></coordinates><panel_attributes>lt=-
+m1=1
+r1= unCentroDeEstetica
+m2=0..n
+r2=listaUsuarios</panel_attributes><additional_attributes>10;20;290;20</additional_attributes></element><element><id>Relation</id><coordinates><x>406</x><y>532</y><w>175</w><h>63</h></coordinates><panel_attributes>lt=-
+m1=1..n
+r1=listaServicios
+m2=1..n
+r2= listaProfesionales
+</panel_attributes><additional_attributes>10;70;10;40;130;40;130;10</additional_attributes></element><element><id>Relation</id><coordinates><x>406</x><y>693</y><w>175</w><h>49</h></coordinates><panel_attributes>lt=-
+m1=1..n
+r1=listaServicios
+m2=0..n
+r2= listaTurnos
+</panel_attributes><additional_attributes>10;10;10;40;230;40</additional_attributes></element><element><id>Relation</id><coordinates><x>588</x><y>532</y><w>77</w><h>126</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unProfesional
+m2=0..n
+r2= listaTurnos</panel_attributes><additional_attributes>10;10;10;160</additional_attributes></element><element><id>Relation</id><coordinates><x>686</x><y>546</y><w>119</w><h>112</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unCliente
+m2=0..n
+r2= listaTurnos</panel_attributes><additional_attributes>100;10;100;40;10;40;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>924</x><y>497</y><w>105</w><h>161</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaCuenta
+m2=0..n
+r2= listaTransaccion</panel_attributes><additional_attributes>90;20;40;20;40;210</additional_attributes></element><element><id>Relation</id><coordinates><x>728</x><y>651</y><w>189</w><h>63</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unTurno
+m2=0..n
+r2= listaTransaccion</panel_attributes><additional_attributes>10;20;130;20;130;60;250;60</additional_attributes></element><element><id>Relation</id><coordinates><x>1008</x><y>672</y><w>175</w><h>35</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaTransaccion
+m2=0..n
+r2= listaPagos</panel_attributes><additional_attributes>10;20;230;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1008</x><y>707</y><w>182</w><h>98</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaTransaccion
+m2=1
+r2= unEstadoTransaccion</panel_attributes><additional_attributes>10;20;120;20;120;120</additional_attributes></element><element><id>Relation</id><coordinates><x>1232</x><y>735</y><w>77</w><h>105</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaPago
+m2=1
+r2= unEstadoPago</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>1295</x><y>672</y><w>175</w><h>168</h></coordinates><panel_attributes>lt=-
+m1=1
+r1=unaPago
+m2=1
+r2= unTipoDePago</panel_attributes><additional_attributes>10;20;140;20;140;220</additional_attributes></element></diagram>

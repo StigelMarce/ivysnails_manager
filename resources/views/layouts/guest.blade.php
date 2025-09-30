@@ -29,7 +29,7 @@
         @endif
         
         <!-- Page Content --> 
-        <main>
+        <main id="main-content" class="z-10">
             {{ $slot }}
         </main> 
 

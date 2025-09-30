@@ -1,16 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 [x-cloak] {
     display: none;
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap")
-layer(base);
 
 @layer utilities {
     /* Chrome, Safari, Edge, and Opera */
@@ -39,12 +35,13 @@ layer(base);
     }
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  overflow: auto; /* necesario para que OverlayScrollbars funcione correctamente */
-  margin: 0;
-  padding: 0;
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: auto; /* necesario para que OverlayScrollbars funcione correctamente */
+    margin: 0;
+    padding: 0;
 }
 
 .dark .custom-scrollbar::-webkit-scrollbar-thumb {
@@ -80,4 +77,56 @@ html, body {
 
 .sidebar:hover .menu-dropdown {
     display: flex;
+}
+
+.calendar-tile {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #e9e7e7c4; /* invisible por defecto */
+}
+
+.calendar-tile:hover {
+    border-color: #60a5fa; /* azul más intenso -> Tailwind blue-400 */ 
+}
+
+.dark .calendar-tile:hover {
+    border-color: #3b82f6; /* azul más intenso -> Tailwind blue-500 */
+}
+
+.current-day {
+    background-color: #2885f655; /* azul claro -> Tailwind bg-blue-200 */ 
+}
+
+.dark .current-day {
+    background-color: #3b82f655; /* azul más intenso -> Tailwind blue-500 */
+}
+
+.not-today {
+    background-color: white;
+}
+
+.dark .not-today {
+    background-color: #1f2937; /* gris muy oscuro -> Tailwind gray-800 */
+}
+
+.not-in-month {
+    background-color: #f3f4f6; /* gris claro -> Tailwind gray-100 */
+    background-image: repeating-linear-gradient(
+        45deg,              /* ángulo de la raya */
+        #95959520,            /* color de línea (gris claro) */
+        #95959520 1px,        /* grosor de la línea */
+        transparent 1px,    /* espacio entre líneas */
+        transparent 5px    /* separación total */
+    );
+}
+
+.dark .not-in-month {
+    background-color: #374151; /* gris oscuro -> Tailwind gray-700 */
+    background-image: repeating-linear-gradient(
+        45deg,              /* ángulo de la raya */
+        #95959520,            /* color de línea (gris claro) */
+        #95959520 1px,        /* grosor de la línea */
+        transparent 1px,    /* espacio entre líneas */
+        transparent 5px    /* separación total */
+    );
 }

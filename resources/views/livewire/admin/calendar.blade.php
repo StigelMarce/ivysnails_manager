@@ -1,8 +1,7 @@
 <div>
     <div id='calendar'></div>
 </div>
-<script>
-    
+<script>     
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new Calendar(calendarEl, {

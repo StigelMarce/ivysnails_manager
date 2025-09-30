@@ -8,9 +8,10 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
-                @if (auth()->user()->hasRole('Admin'))
+                @if (auth()->user()->hasRole('admin'))
                     @livewire('admin.dashboard')
                 @else
+                    @livewire('client.dashboard')
                     <x-welcome />
                 @endif
             </div>

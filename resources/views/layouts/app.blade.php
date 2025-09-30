@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name','IvysNails-Manager') }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -21,7 +21,7 @@
 
 <body
     x-data="{ page: 'ecommerce', 'loaded': true, 'darkMode': false, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
-    x-init="
+    x-init=" 
          darkMode = JSON.parse(localStorage.getItem('darkMode'));
          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
     :class="{'dark bg-gray-900': darkMode === true}" class="transition-colors duration-300 ease-in-out">
@@ -30,11 +30,11 @@
     <!-- ===== Preloader End ===== -->
 
     <div class="flex h-screen overflow-hidden">
-        @if(auth()->user()->hasRole('Admin'))
+        @if(auth()->user()->hasRole('admin'))
         <!-- ===== Sidebar Start ===== -->
         @include('components.sidebar')
         <!-- ===== Sidebar End ===== -->
-        @endif 
+        @endif
 
         <div class="relative flex flex-col flex-1 overflow-x-hidden overflow-y-auto">
             <!-- Small Device Overlay Start -->

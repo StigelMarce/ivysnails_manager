@@ -14,8 +14,14 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-});
 
-Route::get('/calendar', function () {
+    Route::get('/calendar', function () {
         return view('common.calendar');
     })->name('calendar');
+
+    Route::get('/profesionales', function () {
+        return view('livewire.admin.profesionales');
+    })->name('admin.profesionales');
+
+    Route::match(['get', 'post'], '/botman', [\App\Http\Controllers\BotmanController::class, 'handle']);
+});

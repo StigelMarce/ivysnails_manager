@@ -4,24 +4,24 @@
     ondragleave="onLivewireCalendarEventDragLeave(event, '{{ $componentId }}', '{{ $day }}', '{{ $dragAndDropClasses }}');"
     ondragover="onLivewireCalendarEventDragOver(event);"
     ondrop="onLivewireCalendarEventDrop(event, '{{ $componentId }}', '{{ $day }}', {{ $day->year }}, {{ $day->month }}, {{ $day->day }}, '{{ $dragAndDropClasses }}');"
-    class="flex-1 h-40 lg:h-48 border border-gray-200 -mt-px -ml-px"
+    class="flex-1 h-40 lg:h-48"
     style="min-width: 10rem;">
 
     {{-- Wrapper for Drag and Drop --}}
     <div
-        class="w-full h-full"
+        class="w-full h-full calendar-tile" 
         id="{{ $componentId }}-{{ $day }}">
 
         <div
             @if($dayClickEnabled)
                 wire:click="onDayClick({{ $day->year }}, {{ $day->month }}, {{ $day->day }})"
             @endif
-            class="w-full h-full p-2 flex flex-col border
+            class="w-full h-full p-2 flex flex-col
                 {{ $dayInMonth 
                     ? ($isToday 
-                        ? 'bg-yellow-100 dark:bg-yellow-700 border-gray-300 dark:border-gray-600'
-                        : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700')
-                    : 'bg-gray-100 dark:bg-gray-700 border-gray-200 dark:border-gray-600' }}">
+                        ? 'current-day'
+                        : 'not-today')
+                    : 'not-in-month' }}">
 
             {{-- Number of Day --}}
             <div class="flex items-center">
@@ -36,7 +36,7 @@
             </div>
 
             {{-- Events --}}
-            <div class="p-2 my-2 flex-1 overflow-y-auto custom-scrollbar">
+            <div class="my-2 flex-1 overflow-y-auto overflow-x-hidden custom-scrollbar">
                 <div class="grid grid-cols-1 grid-flow-row gap-2">
                     @foreach($events as $event)
                         <div

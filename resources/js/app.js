@@ -9,8 +9,7 @@ import "dropzone/dist/dropzone.css";
 import { OverlayScrollbars } from "overlayscrollbars";
 import "overlayscrollbars/styles/overlayscrollbars.css";
 
-// import Alpine from "alpinejs";
-// import persist from "@alpinejs/persist";
+
 import flatpickr from "flatpickr";
 import Dropzone from "dropzone";
 import { Calendar } from "@fullcalendar/core";
