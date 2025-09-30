@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ProfesionalController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,9 +20,10 @@ Route::middleware([
         return view('common.calendar');
     })->name('calendar');
 
-    Route::get('/profesionales', function () {
-        return view('livewire.admin.profesionales');
-    })->name('admin.profesionales');
+    // CRUD de Profesionales - FORMA CORRECTA
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::resource('profesionales', ProfesionalController::class);
+    });
 
     Route::match(['get', 'post'], '/botman', [\App\Http\Controllers\BotmanController::class, 'handle']);
 });

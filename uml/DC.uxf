@@ -1,0 +1,178 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>1076</x><y>370</y><w>280</w><h>260</h></coordinates><panel_attributes>*Persona*
+--
+- persona_id: Int
+- nombre: String
+- apellido: String
+- dni: String
+- edad: int
+- sexo: char
+--
++ usuario(void): Usuario
++ notificaciones(void): List&lt;Notificacion&gt;
++ mensajes(void): List&lt;Mensaje&gt;
++ preferencia(void): Preferencia
++ recomendaciones(void): List&lt;Recomendacion&gt;
++ servicios(void): List&lt;Servicio&gt;
++ turnos(void): List&lt;Turno&gt;
++ cuenta(void): Cuenta
++ contacto(void): Contacto
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>656</x><y>350</y><w>200</w><h>130</h></coordinates><panel_attributes>*Usuario*
+--
+- user_id: Int
+- email: String
+- password: String
+--
++ persona(void): Persona
++ permisos(void): List&lt;Permiso&gt;
++ rol(void): Rol
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1516</x><y>700</y><w>210</w><h>150</h></coordinates><panel_attributes>*Cuenta*
+--
+- cuenta_id: Int
+- credito: float
+- saldo: float
+- fecha_actualizacion: Date
+--
++ cliente(void): Cliente
++ aplicar_credito(monto: float): void
++ actualizar_saldo(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>716</x><y>680</y><w>240</w><h>170</h></coordinates><panel_attributes>*Servicio*
+--
+- servicio_id: Int
+- nombre: String
+- duracion: int
+- precio: float
+- descuento: float
+- descripcion: String
+--
++ calcular_precio_final(): float
++ personas(void): List&lt;Persona&gt;
++ turnos(void): List&lt;Turno&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1096</x><y>810</y><w>240</w><h>240</h></coordinates><panel_attributes>*Turno*
+--
+- turno_id: Int
+- fecha: Date
+- hora_inicio: Time
+- hora_fin: Time
+- estado: String
+- tipo_turno: String
+--
++ reservar(): void
++ cancelar(): void
++ reprogramar(nueva_fecha: Date): void
++ servicios(void): List&lt;Servicio&gt;
++ profesional(void): Profesional
++ cliente(void): Cliente
++ transacciones(void): List&lt;Transaccion&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>856</x><y>130</y><w>150</w><h>90</h></coordinates><panel_attributes>*Permiso*
+--
+- permiso_id: Int
+- nombre: String
+--
++ usuario(void): Usuario
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1616</x><y>360</y><w>150</w><h>160</h></coordinates><panel_attributes>*Notificacion*
+--
+- notificacion_id: Int
+- fecha: Date
+- hora: Time
+- mensaje: String
+- tipo_notificacion: String
+- estado: String
+--
++ enviar(): void
++ persona(void): Persona
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1326</x><y>120</y><w>150</w><h>130</h></coordinates><panel_attributes>*Mensaje*
+--
+- fecha: Date
+- hora: Time
+- contenido: String
+- estado: String
+--
++ enviar(): void
++ persona(void): Persona
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>176</x><y>350</y><w>200</w><h>170</h></coordinates><panel_attributes>*Centro_de_estetica*
+--
+- centro_id: Int
+- nombre: String
+- cuit: String
+- direccion: String
+- contacto: String
+- ubicacion: String
+--
++ usuarios(void): List&lt;Usuario&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>546</x><y>500</y><w>200</w><h>100</h></coordinates><panel_attributes>*Recomendacion*
+--
+- recomendacion_id: Int
+- tema: String
+- mensaje: String
+--
++ personas(void): List&lt;Persona&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1396</x><y>1000</y><w>160</w><h>170</h></coordinates><panel_attributes>*Transaccion*
+--
+- transaccion_id: Int
+- metodo: String
+- monto: float
+- tipo_transaccion: String
+- estado_transaccion: String
+--
++ registrar(): void
++ turno(void): Turno
++ cuenta(void): Cuenta
++ pagos(void): List&lt;Pago&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1776</x><y>950</y><w>190</w><h>190</h></coordinates><panel_attributes>*Pago*
+--
+- pago_id: Int
+- estado_pago: String
+- fecha_pago: Date
+- monto: float
+--
++ registrar_pago(): void
++ validar_pago(): boolean
++ transaccion(void): Transaccion
++ estado_pago(void):
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2036</x><y>1120</y><w>130</w><h>100</h></coordinates><panel_attributes>*Tipo_de_pago*
+--
+- tipo_pago_id: Int
+- nombre: String
+- descripcion: String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>326</x><y>150</y><w>170</w><h>90</h></coordinates><panel_attributes>*Log*
+--
+- log_id: Int
+- accion: String
+- fecha: Date
+- usuario_responsable: String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>106</x><y>80</y><w>180</w><h>160</h></coordinates><panel_attributes>*Auditoria*
+--
+- auditoria_id: Int
+- accion: String
+- dato_nuevo: String
+- dato_viejo: String
+- fecha: Date
+- usuario_responsable: String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1016</x><y>120</y><w>200</w><h>90</h></coordinates><panel_attributes>*Preferencia*
+--
+- modo: String
+- notificaciones_activas: boolean
+--
++ persona(void): Persona
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1816</x><y>1260</y><w>130</w><h>70</h></coordinates><panel_attributes>*Estado_pago*
+--
+- nombre: String
+- descripcion: String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1606</x><y>1210</y><w>130</w><h>70</h></coordinates><panel_attributes>*Estado_transaccion*
+--
+- nombre: String
+- descripcion: String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>586</x><y>120</y><w>210</w><h>100</h></coordinates><panel_attributes>*Rol*
+--
+- rol_id: Int
+- nombre: String
+--
++ asignar_permiso(p: Permiso): void
++ usuario(void): Usuario
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1536</x><y>160</y><w>150</w><h>90</h></coordinates><panel_attributes>*Contacto*
+--
+- telefono: String
+- direccion: String
+--
++ persona(void): Persona
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
