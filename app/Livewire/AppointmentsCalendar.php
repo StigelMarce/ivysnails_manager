@@ -4,9 +4,7 @@ namespace App\Livewire;
 
 use Omnia\LivewireCalendar\LivewireCalendar;
 use Illuminate\Support\Collection;
-use Carbon\Carbon;
-use App\Models\Event;
-use App\Events\CalendarUpdated;
+use Carbon\Carbon; 
 
 class AppointmentsCalendar extends LivewireCalendar
 {
@@ -33,7 +31,7 @@ class AppointmentsCalendar extends LivewireCalendar
 
     public function events(): Collection
     {
-        $this->eventos = Event::where("user_id", auth()->id())->get();
+        $this->eventos = collect(); //Event::where("user_id", auth()->id())->get();
         return $this->eventos;
     }
 
@@ -58,4 +56,5 @@ class AppointmentsCalendar extends LivewireCalendar
     {
         $this->viewMode = $mode;
     }
+
 }

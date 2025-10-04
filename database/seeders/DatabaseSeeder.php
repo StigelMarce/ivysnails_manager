@@ -25,18 +25,15 @@ class DatabaseSeeder extends Seeder
         }
 
         $users = [
-            [
-                'name' => 'Admin User',
+            [ 
                 'email' => 'admin@mail.com',
                 'password'=> bcrypt('12345678'),
             ],
-            [
-                'name' => 'Professional User',
+            [ 
                 'email' => 'professional@mail.com',
                 'password'=> bcrypt('12345678'),
             ],
-            [
-                'name' => 'Client User',
+            [ 
                 'email' => 'client@mail.com',
                 'password'=> bcrypt('12345678'),
             ],
@@ -54,5 +51,9 @@ class DatabaseSeeder extends Seeder
         $admin->assignRole('admin');
         $professional->assignRole('professional');
         $client->assignRole('client');
+
+        # Crear sexo Masculino y Femenino
+        \App\Models\Sexo::create(['nombre' => 'Masculino']);
+        \App\Models\Sexo::create(['nombre' => 'Femenino']);
     }
 }

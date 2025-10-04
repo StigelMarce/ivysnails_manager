@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="mx-auto max-w-3xl px-5 py-4 md:p-6">
-        <div class="mb-6 ">
+        <div class="mb-6">
             <div class="flex items-center justify-between pb-6">
                 <div class="flex items-center gap-3">
                     <a href="{{ route('admin.profesionales.index') }}" 
@@ -22,36 +22,35 @@
         </div>
 
         <div class="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]">
-            <div class="px-10 py-8">
-                <!-- Foto y Estado -->
-                <div class="mb-10 flex items-start gap-10">
+            <div class="px-6 py-6">
+                <div class="mb-8 flex items-start gap-6">
                     <div>
                         @if($profesional->foto)
                             <img src="{{ asset('storage/' . $profesional->foto) }}" 
-                                 class="h-40 w-40 rounded-lg object-cover" 
+                                 class="h-32 w-32 rounded-lg object-cover" 
                                  alt="{{ $profesional->nombre }}">
                         @else
-                            <div class="h-40 w-40 rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                                <span class="text-gray-500 dark:text-gray-400 text-5xl font-semibold">
+                            <div class="h-32 w-32 rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                                <span class="text-gray-500 dark:text-gray-400 text-4xl font-semibold">
                                     {{ substr($profesional->nombre, 0, 1) }}
                                 </span>
                             </div>
                         @endif
                     </div>
                     <div class="flex-1">
-                        <h3 class="text-3xl font-bold text-gray-800 dark:text-white/90">{{ $profesional->nombre }}</h3>
-                        <p class="mt-2 text-lg text-gray-600 dark:text-gray-400">{{ $profesional->especialidad }}</p>
-                        <div class="mt-4">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white/90">{{ $profesional->nombre }}</h3>
+                        <p class="mt-1 text-gray-600 dark:text-gray-400">{{ $profesional->especialidad }}</p>
+                        <div class="mt-3">
                             @if($profesional->activo)
-                                <span class="inline-flex items-center gap-1.5 rounded-full bg-green-50 px-4 py-1.5 text-base font-medium text-green-700 dark:bg-green-500/15 dark:text-green-500">
-                                    <svg class="h-3 w-3 fill-current" viewBox="0 0 8 8">
+                                <span class="inline-flex items-center gap-1.5 rounded-full bg-green-50 px-3 py-1 text-sm font-medium text-green-700 dark:bg-green-500/15 dark:text-green-500">
+                                    <svg class="h-2 w-2 fill-current" viewBox="0 0 8 8">
                                         <circle cx="4" cy="4" r="4"/>
                                     </svg>
                                     Activo
                                 </span>
                             @else
-                                <span class="inline-flex items-center gap-1.5 rounded-full bg-red-50 px-4 py-1.5 text-base font-medium text-red-700 dark:bg-red-500/15 dark:text-red-500">
-                                    <svg class="h-3 w-3 fill-current" viewBox="0 0 8 8">
+                                <span class="inline-flex items-center gap-1.5 rounded-full bg-red-50 px-3 py-1 text-sm font-medium text-red-700 dark:bg-red-500/15 dark:text-red-500">
+                                    <svg class="h-2 w-2 fill-current" viewBox="0 0 8 8">
                                         <circle cx="4" cy="4" r="4"/>
                                     </svg>
                                     Inactivo
@@ -61,46 +60,43 @@
                     </div>
                 </div>
 
-                <!-- Información de Contacto -->
-                <div class="space-y-8">
+                <div class="space-y-6">
                     <div>
-                        <h4 class="mb-5 text-xl font-semibold text-gray-800 dark:text-white/90">Información de Contacto</h4>
-                        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-                            <div class="rounded-lg border border-gray-200 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-900">
-                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Email</p>
-                                <p class="mt-2 text-base font-medium text-gray-800 dark:text-white/90">{{ $profesional->email }}</p>
+                        <h4 class="mb-4 text-lg font-semibold text-gray-800 dark:text-white/90">Información de Contacto</h4>
+                        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                            <div class="rounded-lg border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-900">
+                                <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Email</p>
+                                <p class="mt-1 text-sm font-medium text-gray-800 dark:text-white/90">{{ $profesional->email }}</p>
                             </div>
-                            <div class="rounded-lg border border-gray-200 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-900">
-                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Teléfono</p>
-                                <p class="mt-2 text-base font-medium text-gray-800 dark:text-white/90">{{ $profesional->telefono ?? 'No especificado' }}</p>
+                            <div class="rounded-lg border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-900">
+                                <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Teléfono</p>
+                                <p class="mt-1 text-sm font-medium text-gray-800 dark:text-white/90">{{ $profesional->telefono ?? 'No especificado' }}</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Información Adicional -->
                     <div>
-                        <h4 class="mb-5 text-xl font-semibold text-gray-800 dark:text-white/90">Información Adicional</h4>
-                        <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-                            <div class="rounded-lg border border-gray-200 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-900">
-                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Fecha de Ingreso</p>
-                                <p class="mt-2 text-base font-medium text-gray-800 dark:text-white/90">{{ $profesional->fecha_ingreso->format('d/m/Y') }}</p>
+                        <h4 class="mb-4 text-lg font-semibold text-gray-800 dark:text-white/90">Información Adicional</h4>
+                        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+                            <div class="rounded-lg border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-900">
+                                <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Fecha de Ingreso</p>
+                                <p class="mt-1 text-sm font-medium text-gray-800 dark:text-white/90">{{ $profesional->fecha_ingreso->format('d/m/Y') }}</p>
                             </div>
-                            <div class="rounded-lg border border-gray-200 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-900">
-                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Registrado</p>
-                                <p class="mt-2 text-base font-medium text-gray-800 dark:text-white/90">{{ $profesional->created_at->format('d/m/Y') }}</p>
+                            <div class="rounded-lg border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-900">
+                                <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Registrado</p>
+                                <p class="mt-1 text-sm font-medium text-gray-800 dark:text-white/90">{{ $profesional->created_at->format('d/m/Y') }}</p>
                             </div>
-                            <div class="rounded-lg border border-gray-200 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-900">
-                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Última Actualización</p>
-                                <p class="mt-2 text-base font-medium text-gray-800 dark:text-white/90">{{ $profesional->updated_at->format('d/m/Y')
+                            <div class="rounded-lg border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-900">
+                                <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Última Actualización</p>
+                                <p class="mt-1 text-sm font-medium text-gray-800 dark:text-white/90">{{ $profesional->updated_at->format('d/m/Y') }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Acciones -->
-                <div class="mt-8 flex gap-3 border-t border-gray-200 pt-6 dark:border-gray-700">-gray-700">
+                <div class="mt-8 flex gap-3 border-t border-gray-200 pt-6 dark:border-gray-700">
                     <a href="{{ route('admin.profesionales.edit', $profesional) }}"
-                       class="shadow-theme-xs inline-flex items-center justify-center gap-2 rounded-lg bg-blue-500 px-7 py-4 text-base font-medium text-white ring-1 ring-blue-400 transition hover:bg-blue-600 dark:bg-blue-600 dark:ring-blue-700 dark:hover:bg-blue-700">
+                       class="shadow-theme-xs inline-flex items-center justify-center gap-2 rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white ring-1 ring-blue-400 transition hover:bg-blue-600 dark:bg-blue-600 dark:ring-blue-700 dark:hover:bg-blue-700">
                         Editar Información
                     </a>
                     <form action="{{ route('admin.profesionales.destroy', $profesional) }}" 
@@ -109,7 +105,7 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit"
-                                class="shadow-theme-xs inline-flex items-center justify-center gap-2 rounded-lg border border-red-300 bg-white px-7 py-4 text-base font-medium text-red-600 hover:bg-red-50 dark:border-red-700 dark:bg-gray-800 dark:text-red-400 dark:hover:bg-red-900/20">
+                                class="shadow-theme-xs inline-flex items-center justify-center gap-2 rounded-lg border border-red-300 bg-white px-5 py-3 text-sm font-medium text-red-600 hover:bg-red-50 dark:border-red-700 dark:bg-gray-800 dark:text-red-400 dark:hover:bg-red-900/20">
                             Eliminar Profesional
                         </button>
                     </form>

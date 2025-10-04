@@ -4,8 +4,9 @@ import typography from "@tailwindcss/typography";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-     presets: [ 
-        require("./vendor/wireui/wireui/tailwind.config.js")
+    presets: [
+        require("./vendor/wireui/wireui/tailwind.config.js"),
+        require("./vendor/power-components/livewire-powergrid/tailwind.config.js"),
     ],
     darkMode: "class",
     content: [
@@ -18,13 +19,17 @@ export default {
         "./vendor/wireui/wireui/ts/**/*.ts",
         "./vendor/wireui/wireui/src/WireUi/**/*.php",
         "./vendor/wireui/wireui/src/Components/**/*.php",
+        "./app/Livewire/**/*Table.php",
+        "./vendor/power-components/livewire-powergrid/resources/views/**/*.php",
+        "./vendor/power-components/livewire-powergrid/src/Themes/Tailwind.php",
+        "../../vendor/power-components/livewire-powergrid/resources/css/tailwind4.css", 
     ],
 
     theme: {
-        extend: {
+        extend: { 
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
-                sofia: ["Sofia", "sans-serif"], 
+                sofia: ["Sofia", "sans-serif"],
             },
         },
     },

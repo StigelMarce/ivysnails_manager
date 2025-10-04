@@ -26,28 +26,32 @@
          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
     :class="{'dark bg-gray-900': darkMode === true}" class="transition-colors duration-300 ease-in-out">
     <!-- ===== Preloader Start ===== -->
-    @include('components.preloader')
-    <!-- ===== Preloader End ===== -->
-
+    {{-- @include('components.preloader') --}}
+    <x-preloader />
+    <x-wireloader />
+    <!-- ===== Preloader End ===== --> 
     <div class="flex h-screen overflow-hidden">
         @if(auth()->user()->hasRole('admin'))
         <!-- ===== Sidebar Start ===== -->
-        @include('components.sidebar')
+        {{-- @include('components.sidebar') --}}
+        <x-sidebar />
         <!-- ===== Sidebar End ===== -->
         @endif
 
         <div class="relative flex flex-col flex-1 overflow-x-hidden overflow-y-auto">
             <!-- Small Device Overlay Start -->
-            @include('components.overlay')
+            {{-- @include('components.overlay') --}}
+            <x-overlay />
             <!-- Small Device Overlay End -->
 
             <!-- ===== Header Start ===== -->
-            @include('components.header')
+            {{-- @include('components.header') --}}
+            <x-header />
             <!-- ===== Header End ===== -->
 
             <!-- ===== Main Content Start ===== -->
             <main id="main-content" class="z-10">
-                {{ $slot }}
+                {{ $slot }}                
             </main>
             <!-- ===== Main Content End ===== -->
         </div>
@@ -55,6 +59,7 @@
 
 
     @stack('modals')
+    @stack('scripts') 
     @livewireScripts
     @livewireCalendarScripts
 </body>

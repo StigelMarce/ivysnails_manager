@@ -1,9 +1,11 @@
+@import 'select2.min.css';  
+@import 'select2-tailwindcss-theme.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@custom-variant dark (&:where(.dark, .dark *));
-
+/** enable dark mode */
+@custom-variant dark (&:where(.dark, .dark *)); 
+ 
 [x-cloak] {
     display: none;
 }
